@@ -15,7 +15,7 @@
 Development of predictive maintenance ML model to enable effective maintenance management eco-system whereby tendency of buses that might have problem can be predictied. On top of that, the maintenance management eco-system shall be serve with a dashboard that enable the maintenance team to be alert on the capacity. 
 
 **Use Cases:**
-In order to achieve the business case requirement, the followings use cases shall be identified.
+In order to achieve the business case requirement, the followings use cases shall be identified. We basically need to profile the buses, captains and daily operations. These informations shall be integrated together to establish the first level of data model. 
 
 ##### **Buses by Service Demographic**<br>
     |-- Bus capacity
