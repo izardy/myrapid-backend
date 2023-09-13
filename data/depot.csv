@@ -1,0 +1,29 @@
+depot_id,depot_name,state_id,depot_status,category,zone,code
+1,Sentul,1,0,1,RKL,STL
+2,Batu Caves,1,1,1,RKL,BCV
+3,Melawati,1,0,1,RKL,MLW
+4,Maluri,1,1,1,RKL,MLR
+5,Cheras Selatan,1,1,1,RKL,CHS
+6,OKR,1,0,1,RKL,OKR
+7,Shah Alam,1,1,1,RKL,SHA
+8,Asia Jaya,1,0,1,RKL,ASJ
+9,Kepong,1,0,1,RKL,KPG
+10,Kuantan,8,1,1,RKN,SMB
+11,Tanjung Bungah,5,1,1,RPG,TB
+12,Sungai Nibong,5,1,1,RPG,SN
+13,Weld Quay,5,1,1,RPG,WQ
+14,Balik Pulau,5,1,1,RPG,BP
+15,Mak Mandin,5,1,1,RPG,MM
+16,Nibong Tebal,5,1,1,RPG,NT
+17,Lorong Kulit,5,1,1,RPG,LK
+18,BRT Sunway,1,1,2,BRT,SWY
+19,Kamunting,5,0,1,RPG,KM
+20,Academy,1,0,0,ACD,AC
+21,MRT Sungai Buloh,1,1,3,MRT,SGB
+22,MRT Kajang,1,1,3,MRT,KJG
+23,Manjung,5,0,1,RPG,MJ
+24,Sungai Petani,5,0,1,RPG,SP
+25,Central Workshop CHS,1,0,0,RKL,CWCS
+26,MRT Jinjang,1,1,3,MRT,JJG
+27,MRT Serdang,1,1,1,RKL,SDG
+28,Putrajaya,1,1,1,RKL,PTJ
