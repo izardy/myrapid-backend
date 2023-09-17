@@ -1,4 +1,5 @@
 import pandas as pd
+import geopandas as gpd
 import numpy as np
 import os
 
@@ -13,7 +14,7 @@ infoDepot['distance']=infoDepot['distance'].str.replace(",","").str.strip().asty
 infoDepot['stop_name']=infoDepot['stop_name'].str.strip()
 infoDepot['street_name']=infoDepot['street_name'].str.strip()
 
-infoDepot['geolocation']=[Point(xy) for xy in zip(infoDepot['latitude'], infoDepot['longitude'])] 
+infoDepot['geolocation']=gpd.points_from_xy(infoDepot['latitude'], infoDepot['longitude'])
 
 infoDepot=infoDepot.to_json(orient = "records")
 
