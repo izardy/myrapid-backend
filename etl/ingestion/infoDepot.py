@@ -14,7 +14,7 @@ infoDepot['distance']=infoDepot['distance'].str.replace(",","").str.strip().asty
 infoDepot['stop_name']=infoDepot['stop_name'].str.strip()
 infoDepot['street_name']=infoDepot['street_name'].str.strip()
 
-infoDepot['geopoint']=infoDepot['latitude']+','+infoDepot['longitude']
+infoDepot['geopoint']=infoDepot['latitude'].astype(str)+','+infoDepot['longitude'].astype(str)
 
 #infoDepot['geolocation']=gpd.points_from_xy(infoDepot['latitude'], infoDepot['longitude'])
 #gdf = gpd.GeoDataFrame(infoDepot, geometry=gpd.points_from_xy(infoDepot.latitude, infoDepot.longitude)) 
