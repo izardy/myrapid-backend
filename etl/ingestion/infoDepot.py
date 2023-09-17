@@ -2,7 +2,7 @@ import pandas as pd
 import geopandas as gpd
 import numpy as np
 import os
-
+'''
 infoDepot=pd.read_csv('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/InfoDEPOT.csv')
 
 infoDepot['depot_name']=infoDepot['depot_name'].str.strip()
@@ -25,6 +25,6 @@ gdf.to_file("/home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoDepot.
 
 # run once to create solr collection infoDepot /home/hadoop/solr-9.3.0/bin/solr create -c infoDEPOT
 #os.system('/home/hadoop/solr-9.3.0/bin/solr create -c infoDEPOT')
-
+'''
 # run once to post data into infoDepot collection /home/hadoop/solr-9.3.0/bin/post -c infoDEPOT /home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoDEPOT.json
 os.system('/home/hadoop/solr-9.3.0/bin/post -c infoDEPOT /home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoDEPOT.json')
