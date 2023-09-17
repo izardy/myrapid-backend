@@ -13,6 +13,8 @@ infoDepot['distance']=infoDepot['distance'].str.replace(",","").str.strip().asty
 infoDepot['stop_name']=infoDepot['stop_name'].str.strip()
 infoDepot['street_name']=infoDepot['street_name'].str.strip()
 
+infoDepot['geolocation']=infoDepot['latitude']+','+infoDepot['longitude']
+
 infoDepot=infoDepot.to_json(orient = "records")
 
 with open('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoDEPOT.json', 'w') as f:
