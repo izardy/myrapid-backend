@@ -1,3 +1,7 @@
+import pandas as pd
+import numpy as np
+import os
+
 infoCaptain=pd.read_csv('../data/captain_schedule/processed/infoCAPTAIN.csv')
 infoCaptain['cs_date']=pd.to_datetime(infoCaptain['cs_date'])
 infoCaptain['ope_date']=pd.to_datetime(infoCaptain['ope_date'])

@@ -1,3 +1,7 @@
+import pandas as pd
+import numpy as np
+import os
+
 infoDepot=pd.read_csv('../data/processed/InfoDEPOT.csv')
 infoDepot=infoDepot.to_json(orient = "records")
 
