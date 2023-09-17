@@ -17,7 +17,7 @@ infoDepot['street_name']=infoDepot['street_name'].str.strip()
 #infoDepot['geolocation']=gpd.points_from_xy(infoDepot['latitude'], infoDepot['longitude'])
 gdf = gpd.GeoDataFrame(infoDepot, geometry=gpd.points_from_xy(infoDepot.latitude, infoDepot.longitude)) 
 
-gdf.to_file("../data/processed/json/infoDepot.json", driver="GeoJSON")
+gdf.to_file("/home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoDepot.json", driver="GeoJSON")
 #infoDepot=infoDepot.to_json(orient = "records")
 
 #with open('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoDEPOT.json', 'w') as f:
