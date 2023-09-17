@@ -14,15 +14,17 @@ infoDepot['distance']=infoDepot['distance'].str.replace(",","").str.strip().asty
 infoDepot['stop_name']=infoDepot['stop_name'].str.strip()
 infoDepot['street_name']=infoDepot['street_name'].str.strip()
 
-infoDepot['geolocation']=gpd.points_from_xy(infoDepot['latitude'], infoDepot['longitude'])
-infoDepot.to_file("../data/processed/json/infoDepot.json", driver="GeoJSON")
+#infoDepot['geolocation']=gpd.points_from_xy(infoDepot['latitude'], infoDepot['longitude'])
+gdf = gpd.GeoDataFrame(infoDepot, geometry=gpd.points_from_xy(infoDepot.latitude, infoDepot.longitude)) 
+
+gdf.to_file("../data/processed/json/infoDepot.json", driver="GeoJSON")
 #infoDepot=infoDepot.to_json(orient = "records")
 
 #with open('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoDEPOT.json', 'w') as f:
  #   f.write(infoDepot)
 
 # run once to create solr collection infoDepot /home/hadoop/solr-9.3.0/bin/solr create -c infoDEPOT
-os.system('/home/hadoop/solr-9.3.0/bin/solr create -c infoDEPOT')
+#os.system('/home/hadoop/solr-9.3.0/bin/solr create -c infoDEPOT')
 
 # run once to post data into infoDepot collection /home/hadoop/solr-9.3.0/bin/post -c infoDEPOT /home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoDEPOT.json
 os.system('/home/hadoop/solr-9.3.0/bin/post -c infoDEPOT /home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoDEPOT.json')
