@@ -13,11 +13,7 @@ infoDepot['distance']=infoDepot['distance'].str.replace(",","").str.strip().asty
 infoDepot['stop_name']=infoDepot['stop_name'].str.strip()
 infoDepot['street_name']=infoDepot['street_name'].str.strip()
 
-<<<<<<< Updated upstream
-infoDepot['geolocation']=infoDepot['latitude'].astype(str)+','+infoDepot['longitude'].astype(str)
-=======
 infoDepot['geolocation']=[Point(xy) for xy in zip(infoDepot['latitude'], infoDepot['longitude'])] 
->>>>>>> Stashed changes
 
 infoDepot=infoDepot.to_json(orient = "records")
 
