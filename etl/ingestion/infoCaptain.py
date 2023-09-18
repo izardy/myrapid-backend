@@ -2,7 +2,12 @@ import pandas as pd
 import numpy as np
 import os
 
+infoDepot=pd.read_csv('../data/processed/InfoDEPOT.csv')[['depot_id','depot_name','route_id','route_desc']].drop_duplicates()#
+
 infoCaptain=pd.read_csv('/home/hadoop/MyRapidHack2023-BackEnd/data/captain_schedule/processed/infoCAPTAIN.csv')
+
+infoCaptain=pd.merge(infoCaptain,infoDepot,how='left',on=['depot_id','route_id'])#
+
 infoCaptain['cs_date']=pd.to_datetime(infoCaptain['cs_date']+ ' 00:00:00').dt.strftime('%Y-%m-%d %H:%M:%S')
 infoCaptain['ope_date']=pd.to_datetime(infoCaptain['ope_date']+ ' 00:00:00').dt.strftime('%Y-%m-%d %H:%M:%S')
 infoCaptain=infoCaptain.rename(columns={'dt_gps_max':'dt_endduty','dt_gps_min':'dt_startduty'})
