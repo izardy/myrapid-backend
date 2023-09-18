@@ -13,7 +13,7 @@ with open('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoCAPTAIN.
     f.write(infoCaptain)
 
 # run once to create solr collection infoCaptain /home/hadoop/solr-9.3.0/bin/solr create -c infoCaptain
-# os.system('/home/hadoop/solr-9.3.0/bin/solr create -c infoCAPTAIN')
+os.system('/home/hadoop/solr-9.3.0/bin/solr create -c infoCAPTAIN')
 
 # run once to post data into infoCaptain collection /home/hadoop/solr-9.3.0/bin/post -c infoCaptain /home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoCaptain.json
 os.system('/home/hadoop/solr-9.3.0/bin/post -c infoCAPTAIN /home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoCAPTAIN.json')
