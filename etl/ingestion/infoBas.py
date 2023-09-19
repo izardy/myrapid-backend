@@ -7,8 +7,8 @@ infoDepot=pd.read_csv('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/InfoD
 infoTRIP=pd.read_csv('/home/hadoop/MyRapidHack2023-BackEnd/data/trip_departure/processed/td_agg.csv',low_memory=False)
 infoTRIP['ope_date']=pd.to_datetime(infoTRIP['ope_date']+ ' 00:00:00').dt.strftime('%Y-%m-%d %H:%M:%S')
 
-infoTRIP['point_a']=infoTRIP['point_a'].str.upper().str.replace('\/|\.','-')
-infoTRIP['point_b']=infoTRIP['point_b'].str.upper().str.replace('\/|\.','-')
+infoTRIP['point_a']=infoTRIP['point_a'].str.upper()#.str.replace('\/|\.','-')
+infoTRIP['point_b']=infoTRIP['point_b'].str.upper()#.str.replace('\/|\.','-')
 
 infoBas=pd.read_csv('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/InfoBAS.csv',low_memory=False)
 
@@ -33,8 +33,7 @@ infoBas=infoBas[['ope_date', 'depot_id', 'line_id', 'bus_no', 'point_a', 'point_
        'capt_id', 'bcc_acc_id', 'acc_date', 'bus_damage', 'eng_find',
        'label_1', 'label', 'depot_name']]
 
-infoBas['point_a']=infoBas['point_a'].astype(str)
-infoBas['point_b']=infoBas['point_b'].astype(str)
+infoBas=infoBas.rename(columns={'point_a':'point_A','point_b':'point_B'})
 
 infoBas=infoBas.to_json(orient = "records")
 
