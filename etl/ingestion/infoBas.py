@@ -10,7 +10,7 @@ infoTRIP['ope_date']=pd.to_datetime(infoTRIP['ope_date']+ ' 00:00:00').dt.strfti
 infoTRIP['point_a']=infoTRIP['point_a'].astype(str)
 infoTRIP['point_b']=infoTRIP['point_b'].astype(str)
 
-infoBas=pd.read_csv('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/InfoBAS.csv')
+infoBas=pd.read_csv('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/InfoBAS.csv',low_memory=False)
 
 infoBas['ope_date']=pd.to_datetime(infoBas['ope_date']+ ' 00:00:00').dt.strftime('%Y-%m-%d %H:%M:%S')
 infoBas['br_date']=pd.to_datetime(infoBas['br_date']+ ' 00:00:00').dt.strftime('%Y-%m-%d %H:%M:%S')
