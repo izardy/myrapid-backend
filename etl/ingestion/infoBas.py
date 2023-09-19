@@ -33,7 +33,8 @@ infoBas=infoBas[['ope_date', 'depot_id', 'line_id', 'bus_no', 'point_a', 'point_
        'capt_id', 'bcc_acc_id', 'acc_date', 'bus_damage', 'eng_find',
        'label_1', 'label', 'depot_name']]
 
-
+infoBas['point_a']=infoBas['point_a'].astype(str)
+infoBas['point_b']=infoBas['point_b'].astype(str)
 
 infoBas=infoBas.to_json(orient = "records")
 
