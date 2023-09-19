@@ -45,7 +45,7 @@ infoTRIP=infoTRIP.rename(columns={'point_a':'point_A','point_b':'point_B','ttl_p
 infoTRIP=infoTRIP.to_json(orient = "records")
 
 with open('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoTrip.json', 'w') as f:
-    f.write(infoBas)
+    f.write(infoTRIP)
 
 # run once to create solr collection infoBas /home/hadoop/solr-9.3.0/bin/solr create -c infoTRIP
 os.system('/home/hadoop/solr-9.3.0/bin/solr create -c infoTRIP')
