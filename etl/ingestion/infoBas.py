@@ -41,7 +41,7 @@ with open('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoBas.json
     f.write(infoBas)
 
 # run once to create solr collection infoBas /home/hadoop/solr-9.3.0/bin/solr create -c infoBas
-os.system('/home/hadoop/solr-9.3.0/bin/solr create -c infoBAS')
+# os.system('/home/hadoop/solr-9.3.0/bin/solr create -c infoBAS')
 
 # run once to post data into infoBas collection /home/hadoop/solr-9.3.0/bin/post -c infoDepot /home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoBas.json
 os.system('/home/hadoop/solr-9.3.0/bin/post -c infoBAS /home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoBas.json')
