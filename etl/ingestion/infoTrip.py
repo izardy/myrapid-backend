@@ -51,7 +51,7 @@ with open('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoTrip.jso
 os.system('/home/hadoop/solr-9.3.0/bin/solr create -c infoTRIP')
 
 # run once to post data into infoTRIP collection /home/hadoop/solr-9.3.0/bin/post -c infoTRIP /home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoTrip.json
-os.system('/home/hadoop/solr-9.3.0/bin/post -c infoDepot /home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoTrip.json')
+os.system('/home/hadoop/solr-9.3.0/bin/post -c infoTrip /home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoTrip.json')
 
 #/home/hadoop/MyRapidHack2023-BackEnd/
 
