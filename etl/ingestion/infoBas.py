@@ -7,8 +7,8 @@ infoDepot=pd.read_csv('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/InfoD
 infoTRIP=pd.read_csv('/home/hadoop/MyRapidHack2023-BackEnd/data/trip_departure/processed/td_agg.csv',low_memory=False)
 infoTRIP['ope_date']=pd.to_datetime(infoTRIP['ope_date']+ ' 00:00:00').dt.strftime('%Y-%m-%d %H:%M:%S')
 
-infoTRIP['point_a']=infoTRIP['point_a'].astype(str)
-infoTRIP['point_b']=infoTRIP['point_b'].astype(str)
+infoTRIP['point_a']=infoTRIP['point_a'].str.upper().str.replace('\/|\.','-')
+infoTRIP['point_b']=infoTRIP['point_b'].str.upper().str.replace('\/|\.','-')
 
 infoBas=pd.read_csv('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/InfoBAS.csv',low_memory=False)
 
