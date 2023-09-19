@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import os
 
-infoDepot=pd.read_csv('../data/processed/InfoDEPOT.csv')[['depot_id','depot_name','route_id','route_desc']].drop_duplicates()#
+infoDepot=pd.read_csv('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/InfoDEPOT.csv')[['depot_id','depot_name','route_id','route_desc']].drop_duplicates()#
 
 infoCaptain=pd.read_csv('/home/hadoop/MyRapidHack2023-BackEnd/data/captain_schedule/processed/infoCAPTAIN.csv')
 
