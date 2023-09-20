@@ -42,6 +42,12 @@ infoTRIP=infoTRIP[['ope_date', 'depot_id', 'line_id', 'bus_no', 'point_a', 'poin
 
 infoTRIP=infoTRIP.rename(columns={'point_a':'point_A','point_b':'point_B','ttl_point_a':'ttl_point_A','ttl_point_b':'ttl_point_B'})
 
+infoBas['label']=infoBas['label'].str.upper()
+
+infoBas['point_a']=infoBas['point_a'].str.upper()
+infoBas['point_b']=infoBas['point_b'].str.upper()
+
+
 infoTRIP=infoTRIP.to_json(orient = "records")
 
 with open('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoTrip.json', 'w') as f:
