@@ -22,7 +22,7 @@ infoBas['acc_date']=pd.to_datetime(infoBas['acc_date']+ ' 00:00:00').dt.strftime
 
 #infoBas=infoBas.drop(columns=['label_1','label_2','label_3'])
 
-infoBas=pd.merge(infoTRIP,infoBas,how='left',on=['ope_date','depot_id','line_id','bus_no']).drop_duplicates()
+infoBas=pd.merge(infoBas,infoTRIP,how='left',on=['ope_date','depot_id','line_id','bus_no']).drop_duplicates()
 infoBas=pd.merge(infoBas,infoDepot,how='left',on=['depot_id']).drop_duplicates()
 
 infoBas=infoBas[['ope_date', 'depot_id', 'line_id', 'bus_no', 'point_a', 'point_b',
@@ -41,7 +41,7 @@ with open('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoBas.json
     f.write(infoBas)
 
 # run once to create solr collection infoBas /home/hadoop/solr-9.3.0/bin/solr create -c infoBas
-os.system('/home/hadoop/solr-9.3.0/bin/solr create -c infoBAS')
+# os.system('/home/hadoop/solr-9.3.0/bin/solr create -c infoBAS')
 
 # run once to post data into infoBas collection /home/hadoop/solr-9.3.0/bin/post -c infoDepot /home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoBas.json
 os.system('/home/hadoop/solr-9.3.0/bin/post -c infoBAS /home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoBas.json')
