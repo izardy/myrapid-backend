@@ -33,6 +33,14 @@ infoBas=infoBas[['ope_date', 'depot_id', 'line_id', 'bus_no', 'point_a', 'point_
        'capt_id', 'bcc_acc_id', 'acc_date', 'bus_damage', 'eng_find',
        'label_1', 'label', 'depot_name']]
 
+infoBas['label_1']=infoBas['label_1'].str.upper()
+infoBas['label_2']=infoBas['label_2'].str.upper()
+infoBas['label_3']=infoBas['label_3'].str.upper()
+infoBas['label']=infoBas['label'].str.upper()
+
+infoBas['point_a']=infoBas['point_a'].str.upper()
+infoBas['point_b']=infoBas['point_b'].str.upper()
+
 infoBas=infoBas.rename(columns={'point_a':'point_A','point_b':'point_B'})
 
 infoBas=infoBas.to_json(orient = "records")
