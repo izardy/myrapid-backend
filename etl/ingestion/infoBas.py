@@ -43,7 +43,7 @@ infoBas['point_b']=infoBas['point_b'].str.upper()
 
 infoBas=infoBas.rename(columns={'point_a':'point_A','point_b':'point_B'})
 
-infoBas=infoBas.to_json(orient = "records")
+infoBas=infoBas.drop_duplicates().to_json(orient = "records")
 
 with open('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoBas.json', 'w') as f:
     f.write(infoBas)
