@@ -47,7 +47,7 @@ infoTRIP['point_b']=infoTRIP['point_b'].str.upper()
 
 infoTRIP=infoTRIP.rename(columns={'point_a':'point_A','point_b':'point_B','ttl_point_a':'ttl_point_A','ttl_point_b':'ttl_point_B'})
 
-infoTRIP=infoTRIP.to_json(orient = "records")
+infoTRIP=infoTRIP.drop_duplicates().to_json(orient = "records")
 
 with open('/home/hadoop/MyRapidHack2023-BackEnd/data/processed/json/infoTrip.json', 'w') as f:
     f.write(infoTRIP)
